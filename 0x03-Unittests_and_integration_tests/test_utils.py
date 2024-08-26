@@ -19,7 +19,5 @@ class TestMemoize(unittest.TestCase):
         ])
     def test_access_nested_map(self, nested_map: Mapping[str, Any], path:
                                Sequence[str], expected_output: Any) -> None:
-        """test suits for access_nested_map
-        """
-        result: Any = access_nested_map(nested_map, path)
-        self.assertEqual(result, expected_output)
+        """test suits for access_nested_map """
+        self.assertEqual(access_nested_map(nested_map, path), expected_output)
