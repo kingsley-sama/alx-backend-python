@@ -17,8 +17,8 @@ class TestMemoize(unittest.TestCase):
         ({"a": {"b": 2}}, ("a",), {'b': 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
         ])
-    def test_access_nested_map(self, nested_map: Mapping, path:
-                               Sequence, expected_output: Any) -> None:
+    def test_access_nested_map(self, nested_map: Mapping[str, Any], path:
+                               Sequence[str], expected_output: Any) -> None:
         """test suits for access_nested_map
         """
         result: Any = access_nested_map(nested_map, path)
