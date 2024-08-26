@@ -6,9 +6,8 @@ from parameterized import parameterized
 from typing import (
     Mapping,
     Sequence,
-    Any,
-    )
-
+    Any
+)
 
 
 class TestMemoize(unittest.TestCase):
@@ -24,4 +23,3 @@ class TestMemoize(unittest.TestCase):
         """
         result: Any = access_nested_map(nested_map, path)
         self.assertEqual(result, expected_output)
-
