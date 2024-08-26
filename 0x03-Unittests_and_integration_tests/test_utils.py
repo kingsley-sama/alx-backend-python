@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """This module defines the TestMemoize class."""
 from utils import access_nested_map
 import unittest
