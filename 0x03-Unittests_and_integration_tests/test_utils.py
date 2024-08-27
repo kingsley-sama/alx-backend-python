@@ -39,6 +39,7 @@ class TestJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
     ])
+    @parameterized.expand(None)
     def test_get_json(self, test_url, test_payload):
         """mocks the get_json function without making actuall api
         calls
