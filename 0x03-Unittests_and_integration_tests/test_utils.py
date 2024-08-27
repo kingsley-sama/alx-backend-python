@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """This module defines the TestMemoize class."""
-from utils import access_nested_map
+from utils import access_nested_map, get_json
 import unittest
+from unittest.mock import Mock, patch
 from parameterized import parameterized
 from typing import (
     Mapping,
@@ -30,3 +31,19 @@ class TestAccessNestedMap(unittest.TestCase):
         """test suits for access_nested_map raises keyerror """
         with self.assertRaises(KeyError) as context:
             access_nested_map(nested_map, path)
+
+
+
+class TestJson(unittest.TestCase):
+    """mocks the get_json function"""
+
+    @parameterized.expand([
+        ("http://example.com", {"payload": True}),
+        ("http://holberton.io", {"payload": False})
+    ])
+    def test_get_json(self, test_url, test_payload):
+        """mocks the get_json function without making actuall api
+        calls
+        """
+        with patch('utils.get_json', Mock) as mock_of_get_json:
+            mock_of_get_json.return_value = test_payload 
