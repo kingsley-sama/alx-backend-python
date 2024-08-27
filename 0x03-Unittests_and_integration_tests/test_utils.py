@@ -33,10 +33,8 @@ class TestAccessNestedMap(unittest.TestCase):
             access_nested_map(nested_map, path)
 
 
-
 class TestJson(unittest.TestCase):
     """mocks the get_json function"""
-
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
@@ -46,4 +44,4 @@ class TestJson(unittest.TestCase):
         calls
         """
         with patch('utils.get_json', Mock) as mock_of_get_json:
-            mock_of_get_json.return_value = test_payload 
+            mock_of_get_json.return_value = test_payload
