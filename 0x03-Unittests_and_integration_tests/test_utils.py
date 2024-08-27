@@ -9,9 +9,9 @@ from typing import (
     Any
 )
 
-
-class TestMemoize(unittest.TestCase):
+class TestAccessNestedMap(unittest.TestCase):
     """Parameterize and patch"""
+    
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {'b': 2}),
@@ -19,4 +19,4 @@ class TestMemoize(unittest.TestCase):
         ])
     def test_access_nested_map(self, nested_map, path, expected_output):
         """test suits for access_nested_map """
-        self.assertEqual(access_nested_map(nested_map, path), expected_output)
+        self.assertEqual(qaccess_nested_map(nested_map, path), expected_output)
